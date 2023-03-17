@@ -1,14 +1,15 @@
 use yew::prelude::*;
 mod components;
 use components::header::Header;
+use components::hero::Hero;
 
 #[function_component(App)]
 fn app() -> Html {
     html! {
         <>
             <Header />
-            <main class="mt-20 p-4">
-                <h1 class="text-3xl font-bold underline">{"Hello World!"}</h1>
+            <main class="mt-20 p-8">
+                <Hero />
             </main>
         </>
     }
