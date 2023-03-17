@@ -14,7 +14,7 @@ fn app() -> Html {
     html! {
         <>
             <Header />
-            <main class="mt-28 m-8">
+            <main class="mt-28 m-8 font-body">
                 <Hero />
                 <section class="my-8 grid grid-cols-3 gap-8">
                     { for (1..10).into_iter().map(|_| html! {<Card date={card_placeholder.0} title={card_placeholder.1} summary={card_placeholder.2}/>})}
