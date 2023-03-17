@@ -1,6 +1,7 @@
 use yew::prelude::*;
 mod components;
 use components::card::Card;
+use components::footer::Footer;
 use components::header::Header;
 use components::hero::Hero;
 
@@ -20,6 +21,7 @@ fn app() -> Html {
                     { for (1..10).into_iter().map(|_| html! {<Card date={card_placeholder.0} title={card_placeholder.1} summary={card_placeholder.2}/>})}
                 </section>
             </main>
+            <Footer />
         </>
     }
 }
