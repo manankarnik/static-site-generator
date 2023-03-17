@@ -32,10 +32,9 @@ pub fn header() -> Html {
                 { for nav_links.iter().map(|item| { html! {<li class="p-4 text-lg"><a href={item.link}>{item.name}</a></li>} })}
             </ul>
             <ul class="w-full flex justify-end items-center">
-                <li><button class="mx-2 py-2 px-4 text-lg rounded-xl">{"Log in"}</button></li>
-                <li><button class="mx-2 py-2 px-4 bg-black text-white text-lg rounded-xl">{"Sign up"}</button></li>
+                <li><a class="mx-2 py-2 px-4 text-lg rounded-xl">{"Log in"}</a></li>
+                <li><a class="mx-2 py-2 px-4 bg-black text-white text-lg rounded-xl">{"Sign up"}</a></li>
             </ul>
-
         </header>
     }
 }
