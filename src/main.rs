@@ -8,7 +8,7 @@ fn app() -> Html {
     html! {
         <>
             <Header />
-            <main class="mt-20 p-8">
+            <main class="mt-28 m-8">
                 <Hero />
             </main>
         </>
