@@ -13,7 +13,7 @@ pub fn home() -> Html {
         <>
             <Hero />
             <section class="my-8 grid grid-cols-3 gap-8">
-                { for (1..10).into_iter().map(|_| html! {<Card date={card_placeholder.0} title={card_placeholder.1} summary={card_placeholder.2}/>})}
+                { for (1..10).into_iter().map(|id| html! {<Card id={id.to_string()} date={card_placeholder.0} title={card_placeholder.1} summary={card_placeholder.2}/>})}
             </section>
         </>
     }
