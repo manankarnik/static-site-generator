@@ -14,20 +14,20 @@ pub fn header() -> Html {
         },
         NavItem {
             name: "Blog",
-            link: "#",
+            link: "/blog",
         },
         NavItem {
             name: "About",
-            link: "#",
+            link: "/about",
         },
         NavItem {
             name: "Contact",
-            link: "#",
+            link: "/contact",
         },
     ];
     html! {
         <header class="px-8 flex items-center fixed top-0 w-full h-20 border-b border-grey backdrop-blur-lg font-head uppercase">
-            <span class="w-full text-4xl font-bold">{"Blog"}</span>
+            <a href="/" class="w-full text-4xl font-bold">{"Blog"}</a>
             <ul class="w-full flex justify-center items-center">
                 { for nav_links.iter().map(|item| { html! {<li class="p-4 text-lg"><a href={item.link}>{item.name}</a></li>} })}
             </ul>

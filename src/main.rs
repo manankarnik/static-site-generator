@@ -1,25 +1,21 @@
 use yew::prelude::*;
+use yew_router::prelude::*;
 mod components;
-use components::card::Card;
+mod pages;
+mod router;
 use components::footer::Footer;
 use components::header::Header;
-use components::hero::Hero;
+use router::{switch, Route};
 
 #[function_component(App)]
 fn app() -> Html {
-    let card_placeholder = (
-        "17 Mar, 2023",
-        "Lorem Ipsum",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec hendrerit elit.",
-    );
     html! {
         <>
             <Header />
             <main class="mt-28 m-8 font-body">
-                <Hero />
-                <section class="my-8 grid grid-cols-3 gap-8">
-                    { for (1..10).into_iter().map(|_| html! {<Card date={card_placeholder.0} title={card_placeholder.1} summary={card_placeholder.2}/>})}
-                </section>
+                <BrowserRouter>
+                    <Switch<Route> render={switch} />
+                </BrowserRouter>
             </main>
             <Footer />
         </>
