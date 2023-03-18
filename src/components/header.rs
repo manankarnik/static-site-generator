@@ -26,7 +26,7 @@ pub fn header() -> Html {
         },
     ];
     html! {
-        <header class="px-8 flex items-center fixed top-0 w-full h-20 border-b border-grey backdrop-blur-lg font-head uppercase">
+        <header class="z-10 px-8 flex items-center fixed top-0 w-full h-20 border-b border-grey backdrop-blur-lg font-head uppercase">
             <a href="/" class="w-full text-4xl font-bold">{"Blog"}</a>
             <ul class="w-full flex justify-center items-center">
                 { for nav_links.iter().map(|item| { html! {<li class="p-4 text-lg"><a href={item.link}>{item.name}</a></li>} })}
