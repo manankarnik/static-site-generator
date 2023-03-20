@@ -4,7 +4,7 @@ use yew::prelude::*;
 pub fn hero() -> Html {
     html! {
         <section class="my-8 flex justify-center items-center h-60 bg-slate-200 rounded-lg">
-            <h1 class="text-4xl uppercase font-bold">{"Welcome to the Blog!"}</h1>
+            <h1>{"Welcome to the Blog!"}</h1>
         </section>
     }
 }

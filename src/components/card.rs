@@ -17,7 +17,7 @@ pub fn card(props: &CardProps) -> Html {
             </div>
             <div class="p-4">
                 <span class="text-gray-400">{&props.date}</span>
-                <h2 class="my-2 text-3xl font-bold font-head uppercase text-red-500">{&props.title}</h2>
+                <h2>{&props.title}</h2>
                 <p>{&props.summary}</p>
             </div>
         </a>
