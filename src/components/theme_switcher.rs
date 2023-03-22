@@ -1,9 +1,12 @@
+use gloo::storage::LocalStorage;
+use gloo_storage::Storage;
 use yew::prelude::*;
 use yew_icons::{Icon, IconId};
 
 #[function_component(ThemeSwitcher)]
 pub fn theme_switcher() -> Html {
-    let is_dark = use_state(|| false);
+    let is_dark =
+        use_state(|| LocalStorage::get::<String>("theme").ok().as_deref() != Some("light"));
     let onclick = {
         let is_dark = is_dark.clone();
         let html_element = web_sys::window()
@@ -20,6 +23,8 @@ pub fn theme_switcher() -> Html {
         }
         Callback::from(move |_| {
             is_dark.set(!(*is_dark).clone());
+            LocalStorage::set("theme", if *is_dark { "light" } else { "dark" })
+                .expect("Couldn't store theme");
         })
     };
     html! {
