@@ -15,7 +15,7 @@ serde = "1.0.158"
 wasm-logger = "0.2.0"
 yew = { version = "0.20.0", features = ["csr"] }
 yew-router = "0.17.0"
-yew_icons = { version = "0.7.0", features = ["BootstrapSunFill", "BootstrapMoonFill"] }
+yew_icons = { version = "0.7.0", features = ["BootstrapSunFill", "BootstrapMoonFill", "FontAwesomeSolidBars"] }
 gloo = "0.8.0"
 gloo-storage = "0.2.2"
 
