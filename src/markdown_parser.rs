@@ -44,3 +44,11 @@ lazy_static! {
 pub fn get_post(route: &str) -> Option<Post> {
     POSTS.iter().find(|p| p.route == route).cloned()
 }
+
+pub fn get_routes() -> Vec<&'static str> {
+    let mut routes = Vec::with_capacity(POSTS.capacity());
+    for post in POSTS.iter() {
+        routes.push(post.route.as_str().clone());
+    }
+    routes
+}
