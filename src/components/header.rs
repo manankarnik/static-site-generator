@@ -27,7 +27,7 @@ pub fn header() -> Html {
         },
     ];
     html! {
-        <header class="z-10 px-8 flex items-center fixed top-0 w-full h-20 border-b border-gray dark:border-gray-700 bg-white/25 dark:bg-zinc-900/25 backdrop-blur-lg font-head uppercase">
+        <header class="z-10 px-8 flex items-center fixed top-0 w-full h-20 bg-white dark:bg-zinc-900 drop-shadow-lg	font-head uppercase">
             <div class="w-full flex">
                 <a href="/" class="text-4xl font-bold">{"Blog"}</a>
             </div>
