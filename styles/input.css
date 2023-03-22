@@ -46,6 +46,9 @@
   }
   article hr {
     @apply my-6;
+    @apply border-t;
+    @apply border-gray-200;
+    @apply dark:border-gray-700;
   }
   article ol {
     @apply list-decimal;
