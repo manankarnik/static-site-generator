@@ -1,3 +1,10 @@
+---
+title: First Post
+summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra felis ut tempor laoreet. Quisque massa dui, hendrerit quis suscipit vel, vehicula sed nunc. Sed porta tortor eu odio dictum, eget scelerisque libero scelerisque. Donec pretium fermentum lacus, ac maximus tortor condimentum quis. Curabitur vitae dolor ante. Cras volutpat convallis odio, a luctus ligula rhoncus sed. Integer hendrerit nisl et arcu lobortis blandit. Quisque elit arcu, tempor in turpis nec, pretium ullamcorper elit.
+date: 1/3/2023
+image: https://dummyimage.com/640x360/eee/aaa
+---
+
 # First Post
 
 ![Image](https://dummyimage.com/640x360/eee/aaa)

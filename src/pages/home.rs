@@ -6,16 +6,12 @@ use yew::prelude::*;
 #[function_component(Home)]
 pub fn home() -> Html {
     let routes = markdown_parser::get_routes();
-    let card_placeholder = (
-        "17 Mar, 2023",
-        "Lorem Ipsum",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec hendrerit elit.",
-    );
+    let metadata = markdown_parser::get_metadata();
     html! {
         <>
             <Hero />
             <section class="my-8 grid grid-cols-3 gap-8">
-                { for (0..routes.len()).into_iter().map(|id| html! {<Card id={routes[id]} date={card_placeholder.0} title={card_placeholder.1} summary={card_placeholder.2}/>})}
+                { for (0..routes.len()).into_iter().map(|id| html! {<Card id={routes[id]} date={metadata[id].date.clone()} title={metadata[id].title.clone()} summary={metadata[id].summary.clone()} img_src={metadata[id].image.clone()} />})}
             </section>
         </>
     }
