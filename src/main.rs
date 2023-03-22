@@ -26,7 +26,6 @@ fn app() -> Html {
 
 fn main() {
     wasm_logger::init(wasm_logger::Config::default());
-    markdown_parser::parse();
     info!("{:?}", markdown_parser::get_post("first"));
     yew::Renderer::<App>::new().render();
 }
