@@ -1,3 +1,4 @@
+use super::theme_switcher::ThemeSwitcher;
 use yew::prelude::*;
 
 struct NavItem {
@@ -26,7 +27,7 @@ pub fn header() -> Html {
         },
     ];
     html! {
-        <header class="z-10 px-8 flex items-center fixed top-0 w-full h-20 border-b border-grey backdrop-blur-lg font-head uppercase">
+        <header class="z-10 px-8 flex items-center fixed top-0 w-full h-20 border-b border-gray dark:border-gray-700 bg-white/25 dark:bg-zinc-900/25 backdrop-blur-lg font-head uppercase">
             <div class="w-full flex">
                 <a href="/" class="text-4xl font-bold">{"Blog"}</a>
             </div>
@@ -36,6 +37,7 @@ pub fn header() -> Html {
             <nav>
             </nav>
             <ul class="w-full flex justify-end items-center">
+                <ThemeSwitcher />
             </ul>
         </header>
     }
