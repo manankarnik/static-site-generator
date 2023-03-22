@@ -59,7 +59,8 @@
     @apply p-4;
     @apply border-l-4;
     @apply border-red-500;
-    @apply bg-gray-50;
+    @apply bg-zinc-100;
+    @apply dark:bg-zinc-800;
   }
   article blockquote p {
     @apply my-1;
