@@ -52,14 +52,10 @@ pub fn header() -> Html {
             "right-0",
             "w-[50vw]",
             "h-screen",
-            "flex",
-            "flex-col",
             "bg-white",
             "dark:bg-zinc-900",
             "transition-all",
             "translate-x-full",
-            "[&>*]:p-4",
-            "[&>*]:text-lg",
         ]
     });
 
@@ -113,18 +109,22 @@ pub fn header() -> Html {
                 <div class="w-full flex text-3xl font-bold">
                     <Link<Route> to={Route::Home}>{"Blog"}</Link<Route>>
                 </div>
-                <nav class="hidden md:flex justify-center items-center [&>*]:p-4 [&>*]:text-lg">
-                    { for nav_links.iter().map(|item| { html! {<Link<Route> to={item.route.clone()}>{item.name.clone()}</Link<Route>>} })}
+                <nav class="hidden md:block">
+                    <ul class="md:flex md:justify-center md:items-center">
+                        { for nav_links.iter().map(|item| { html! {<li><Link<Route> classes="p-4 text-lg" to={item.route.clone()}>{item.name.clone()}</Link<Route>></li>} })}
+                    </ul>
                 </nav>
                 <ul class="w-full flex justify-end items-center">
                     <li><ThemeSwitcher /></li>
                     <li class="md:hidden"><button class="p-2" onclick={on_menu_click}><Icon icon_id={IconId::FontAwesomeSolidBars} /></button></li>
                 </ul>
             </div>
-            <div onclick={on_overlay_click} class={classes!((*overlay_classes).clone())}>
+            <div onclick={on_overlay_click.clone()} class={classes!((*overlay_classes).clone())}>
             </div>
             <nav class={classes!((*menu_classes).clone())}>
-                { for nav_links.iter().map(|item| { html! {<Link<Route> to={item.route.clone()}>{item.name.clone()}</Link<Route>>} })}
+                <ul class="flex flex-col">
+                    { for nav_links.iter().map(|item| { html! {<li onclick={on_overlay_click.clone()}><Link<Route> classes="p-4 block w-full h-full text-lg" to={item.route.clone()}>{item.name.clone()}</Link<Route>></li>} })}
+                </ul>
             </nav>
         </header>
     }
