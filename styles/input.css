@@ -8,7 +8,7 @@
     @apply dark:text-white;
   }
   h1 {
-    @apply mx-auto;
+    @apply text-center;
     @apply text-2xl;
     @apply font-bold;
     @apply font-head;
