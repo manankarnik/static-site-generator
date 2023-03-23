@@ -14,7 +14,7 @@ pub struct CardProps {
 #[function_component(Card)]
 pub fn card(props: &CardProps) -> Html {
     html! {
-        <div class="shadow-md dark:bg-zinc-800 group">
+        <div class="shadow-md bg-zinc-50 dark:bg-zinc-800 group">
             <Link<Route> to={Route::Post{id: props.id.to_string()}}>
                 <div class="overflow-hidden">
                     <img src={&props.img_src} class="object-cover w-full h-full group-hover:scale-110 transition-all duration-500" />
