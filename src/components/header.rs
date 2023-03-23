@@ -1,30 +1,32 @@
 use super::theme_switcher::ThemeSwitcher;
+use crate::router::Route;
 use yew::prelude::*;
 use yew_icons::{Icon, IconId};
+use yew_router::prelude::*;
 
 struct NavItem {
-    name: &'static str,
-    link: &'static str,
+    name: String,
+    route: Route,
 }
 
 #[function_component(Header)]
 pub fn header() -> Html {
     let nav_links = vec![
         NavItem {
-            name: "Home",
-            link: "/",
+            name: String::from("Home"),
+            route: Route::Home,
         },
         NavItem {
-            name: "Blog",
-            link: "/blog",
+            name: String::from("Blog"),
+            route: Route::Blog,
         },
         NavItem {
-            name: "About",
-            link: "/about",
+            name: String::from("About"),
+            route: Route::About,
         },
         NavItem {
-            name: "Contact",
-            link: "/contact",
+            name: String::from("Contact"),
+            route: Route::Contact,
         },
     ];
 
@@ -56,6 +58,8 @@ pub fn header() -> Html {
             "dark:bg-zinc-900",
             "transition-all",
             "translate-x-full",
+            "[&>*]:p-4",
+            "[&>*]:text-lg",
         ]
     });
 
@@ -106,11 +110,11 @@ pub fn header() -> Html {
     html! {
         <header class="z-10 px-8 fixed top-0 w-full h-20 bg-white dark:bg-zinc-900 drop-shadow-lg font-head uppercase">
             <div class="flex h-full items-center">
-                <div class="w-full flex">
-                    <a href="/" class="text-3xl font-bold">{"Blog"}</a>
+                <div class="w-full flex text-3xl font-bold">
+                    <Link<Route> to={Route::Home}>{"Blog"}</Link<Route>>
                 </div>
-                <nav class="hidden md:flex justify-center items-center">
-                    { for nav_links.iter().map(|item| { html! {<a href={item.link} class="p-4 text-lg">{item.name}</a>} })}
+                <nav class="hidden md:flex justify-center items-center [&>*]:p-4 [&>*]:text-lg">
+                    { for nav_links.iter().map(|item| { html! {<Link<Route> to={item.route.clone()}>{item.name.clone()}</Link<Route>>} })}
                 </nav>
                 <ul class="w-full flex justify-end items-center">
                     <li><ThemeSwitcher /></li>
@@ -120,7 +124,7 @@ pub fn header() -> Html {
             <div onclick={on_overlay_click} class={classes!((*overlay_classes).clone())}>
             </div>
             <nav class={classes!((*menu_classes).clone())}>
-                { for nav_links.iter().map(|item| { html! {<a href={item.link} class="p-4 text-lg">{item.name}</a>} })}
+                { for nav_links.iter().map(|item| { html! {<Link<Route> to={item.route.clone()}>{item.name.clone()}</Link<Route>>} })}
             </nav>
         </header>
     }
