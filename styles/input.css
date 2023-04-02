@@ -54,6 +54,9 @@
     @apply list-decimal;
     @apply list-inside;
   }
+  article li p {
+    display: inline;
+  }
   article a {
     @apply text-red-500;
     @apply underline;
