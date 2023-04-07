@@ -3,7 +3,7 @@
 <div align="center">
 
 ![CodeSize](https://img.shields.io/github/languages/code-size/manankarnik/static-site-generator?style=for-the-badge)
-![License](https://img.shields.io/github/license/manankarnik/static-site-generator?style=for-the-badge)
+[![License](https://img.shields.io/github/license/manankarnik/static-site-generator?label=License&style=for-the-badge)](LICENSE)
 ![LastCommit](https://img.shields.io/github/last-commit/manankarnik/static-site-generator?style=for-the-badge)
 
 </div>
