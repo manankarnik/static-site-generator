@@ -10,6 +10,8 @@
 
 Static Site Generator using Yew and Markdown files
 
+Example Blog: https://cosmos-blog.netlify.app/
+
 ## Pre-requisites
 
 - [Rust](https://www.rust-lang.org/)
